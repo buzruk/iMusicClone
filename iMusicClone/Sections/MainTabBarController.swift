@@ -8,9 +8,25 @@
 import SwiftUI
 import UIKit
 
+/// The delegate for control track detail controller to minimize or maximaze.
+protocol MainTabBarControllerDelegate: AnyObject {
+  /// Minimized track detail controller.
+  func minimizeTrackDetailController()
+  
+  /// Maximize track detail controller.
+  ///
+  /// - Parameter searchViewModel: The cell of the ``SearchViewModel``.
+  func maximizeTrackDetailController(searchViewModel: SearchViewModel.Cell?)
+}
+
 class MainTabBarController: UITabBarController {
+  private var minimizedTopAnchorConstraint: NSLayoutConstraint!
+  private var maximizedTopAnchorConstraint: NSLayoutConstraint!
+  private var bottomAnchorConstraint: NSLayoutConstraint!
+  
   private let searchVC: SearchVC = .loadFromStoryboard()
   private let libraryView = LibraryView()
+  let trackDetailView: TrackDetailView = .loadFromNib()
 
   override func viewDidLoad() {
     super.viewDidLoad()
