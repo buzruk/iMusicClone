@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum AnimationHelper {
+enum Helper {
   /// Performs a view animation using a timing curve corresponding to the motion of a physical spring.
   ///
   /// - Parameters:
@@ -51,5 +51,17 @@ enum AnimationHelper {
       initialSpringVelocity: initialSpringVelocity,
       options: options,
       animations: animations)
+  }
+  
+  
+  /// Get MainTabBarController from UIApplication.
+  static func getTabBarViewController() -> MainTabBarController? {
+    let keyWindow = UIApplication.shared.connectedScenes
+      .filter { $0.activationState == .foregroundActive }
+      .map { $0 as? UIWindowScene }
+      .compactMap { $0 }
+      .first?.windows
+      .filter { $0.isKeyWindow }.first
+    return keyWindow?.rootViewController as? MainTabBarController
   }
 }

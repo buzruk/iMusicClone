@@ -33,7 +33,10 @@ class SearchVC: UIViewController, SearchDisplayLogic {
   
   /// A footer of the table view
   private lazy var footerView = FooterView()
-
+  
+  /// The delegate for control track detail controller to minimize or maximaze.
+  weak var tabBarDelegate: MainTabBarControllerDelegate?
+  
   // MARK: Interface builder outlet
   
   @IBOutlet var table: UITableView!
@@ -47,6 +50,15 @@ class SearchVC: UIViewController, SearchDisplayLogic {
     
     setup()
     setupSearchBar()
+    setupTableView()
+    searchBar(searchController.searchBar, textDidChange: "maher zain")
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    let tabBarVC = Helper.getTabBarViewController()
+    tabBarVC?.trackDetailView.trackMovingDelegate = self
   }
   
   func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
@@ -138,6 +150,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     didSelectRowAt indexPath: IndexPath
   ) {
     let cellViewModel = searchViewModel.cells[indexPath.row]
+    tabBarDelegate?.maximizeTrackDetailController(searchViewModel: cellViewModel)
   }
   
   func tableView(
@@ -165,5 +178,45 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     searchViewModel.cells.count > 0
       ? 0
       : 250
+  }
+}
+
+extension SearchVC: TrackMovingDelegate {
+  func moveBack() -> SearchViewModel.Cell? {
+    getTrack(for: .back)
+  }
+  
+  func moveForward() -> SearchViewModel.Cell? {
+    getTrack(for: .forward)
+  }
+
+  /// Get track from received music navigation state.
+  ///
+  /// - Parameter type: The state of the music navigation.
+  /// - Returns: The cell of the ``SearchViewModel``.
+  private func getTrack(for type: MusicNavigationState) -> SearchViewModel.Cell? {
+    guard let indexPath = table.indexPathForSelectedRow
+    else { return nil }
+    
+    var nextIndexPath: IndexPath!
+    
+    switch type {
+      case .back:
+        nextIndexPath = IndexPath(row: indexPath.row - 1,
+                                  section: indexPath.section)
+        if nextIndexPath.row == -1 {
+          nextIndexPath.row = searchViewModel.cells.count - 1
+        }
+      case .forward:
+        nextIndexPath = IndexPath(row: indexPath.row + 1,
+                                  section: indexPath.section)
+        if nextIndexPath.row == searchViewModel.cells.count {
+          nextIndexPath.row = 0
+        }
+    }
+    
+    table.selectRow(at: nextIndexPath, animated: true, scrollPosition: .none)
+    let cellViewModel = searchViewModel.cells[nextIndexPath.row]
+    return cellViewModel
   }
 }

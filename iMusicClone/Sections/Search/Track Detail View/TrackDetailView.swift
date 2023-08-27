@@ -34,7 +34,7 @@ class TrackDetailView: UIView {
   @IBOutlet var volumeSlider: UISlider!
   
   @IBOutlet var minimizedTrackView: UIView!
-  @IBOutlet weak var miniGoForwardButton: UIButton!
+  @IBOutlet var miniGoForwardButton: UIButton!
   @IBOutlet var miniTrackImageView: UIImageView!
   @IBOutlet var miniMusicStateButton: UIButton!
   @IBOutlet var miniTrackTitleLabel: UILabel!
@@ -173,11 +173,11 @@ private extension TrackDetailView {
   func setTrackImageScale(for type: AVPlayer.TimeControlStatus) {
     switch type {
       case .playing:
-        AnimationHelper.animate {
+        Helper.animate {
           self.trackImageView.transform = .identity
         }
       case .paused:
-        AnimationHelper.animate {
+        Helper.animate {
           let scale: CGFloat = 0.8
           self.trackImageView.transform = CGAffineTransform(scaleX: scale,
                                                             y: scale)
@@ -279,7 +279,7 @@ private extension TrackDetailView {
         maximizedTrackView.transform = CGAffineTransform(translationX: 0,
                                                          y: translation.y)
       case .ended:
-        AnimationHelper.animate(options: .curveEaseOut) {
+        Helper.animate(options: .curveEaseOut) {
           self.maximizedTrackView.transform = .identity
           if translation.y > 50 {
             self.tabBarDelegate?.minimizeTrackDetailController()
@@ -310,7 +310,7 @@ private extension TrackDetailView {
     let translation = gesture.translation(in: superview)
     let velocity = gesture.velocity(in: superview)
     
-    AnimationHelper.animate(options: .curveEaseOut) {
+    Helper.animate(options: .curveEaseOut) {
       self.transform = .identity
       
       if translation.y < -200 || velocity.y < -500 {

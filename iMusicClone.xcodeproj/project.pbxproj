@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E67886182A9B53CB00CF38B0 /* MusicNavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67886172A9B53CB00CF38B0 /* MusicNavigationState.swift */; };
+		E678861A2A9B54CE00CF38B0 /* LibraryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67886192A9B54CE00CF38B0 /* LibraryViewCell.swift */; };
 		E6E3B15B2A9B0885009147D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B15A2A9B0885009147D3 /* AppDelegate.swift */; };
 		E6E3B15D2A9B0885009147D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B15C2A9B0885009147D3 /* SceneDelegate.swift */; };
 		E6E3B15F2A9B0885009147D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B15E2A9B0885009147D3 /* ViewController.swift */; };
@@ -33,13 +35,15 @@
 		E6E3B1AE2A9B276A009147D3 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1AD2A9B276A009147D3 /* FooterView.swift */; };
 		E6E3B1B02A9B27DF009147D3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1AF2A9B27DF009147D3 /* UIColor+Extension.swift */; };
 		E6E3B1B32A9B2BD6009147D3 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1B22A9B2BD6009147D3 /* TrackDetailView.swift */; };
-		E6E3B1B62A9B2C31009147D3 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1B52A9B2C31009147D3 /* AnimationHelper.swift */; };
+		E6E3B1B62A9B2C31009147D3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1B52A9B2C31009147D3 /* Helper.swift */; };
 		E6E3B1B82A9B2CC4009147D3 /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6E3B1B72A9B2CC4009147D3 /* TrackDetailView.xib */; };
 		E6E3B1BA2A9B4BF8009147D3 /* CMTime+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1B92A9B4BF8009147D3 /* CMTime+Extension.swift */; };
 		E6E3B1BC2A9B4C5C009147D3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1BB2A9B4C5C009147D3 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E67886172A9B53CB00CF38B0 /* MusicNavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicNavigationState.swift; sourceTree = "<group>"; };
+		E67886192A9B54CE00CF38B0 /* LibraryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewCell.swift; sourceTree = "<group>"; };
 		E6E3B1572A9B0885009147D3 /* iMusicClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMusicClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E3B15A2A9B0885009147D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6E3B15C2A9B0885009147D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +70,7 @@
 		E6E3B1AD2A9B276A009147D3 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		E6E3B1AF2A9B27DF009147D3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		E6E3B1B22A9B2BD6009147D3 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
-		E6E3B1B52A9B2C31009147D3 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
+		E6E3B1B52A9B2C31009147D3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E6E3B1B72A9B2CC4009147D3 /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
 		E6E3B1B92A9B4BF8009147D3 /* CMTime+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime+Extension.swift"; sourceTree = "<group>"; };
 		E6E3B1BB2A9B4C5C009147D3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				E6E3B1852A9B1001009147D3 /* Track.swift */,
+				E67886172A9B53CB00CF38B0 /* MusicNavigationState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				E6E3B18B2A9B10BF009147D3 /* LibraryView.swift */,
+				E67886192A9B54CE00CF38B0 /* LibraryViewCell.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -228,7 +234,7 @@
 		E6E3B1B42A9B2C25009147D3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E6E3B1B52A9B2C31009147D3 /* AnimationHelper.swift */,
+				E6E3B1B52A9B2C31009147D3 /* Helper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -318,17 +324,19 @@
 				E6E3B1B02A9B27DF009147D3 /* UIColor+Extension.swift in Sources */,
 				E6E3B1BA2A9B4BF8009147D3 /* CMTime+Extension.swift in Sources */,
 				E6E3B18F2A9B1205009147D3 /* UIViewController+Extension.swift in Sources */,
+				E678861A2A9B54CE00CF38B0 /* LibraryViewCell.swift in Sources */,
 				E6E3B1B32A9B2BD6009147D3 /* TrackDetailView.swift in Sources */,
 				E6E3B1862A9B1001009147D3 /* Track.swift in Sources */,
 				E6E3B1AE2A9B276A009147D3 /* FooterView.swift in Sources */,
 				E6E3B15B2A9B0885009147D3 /* AppDelegate.swift in Sources */,
 				E6E3B17B2A9B0C67009147D3 /* SearchPresenter.swift in Sources */,
-				E6E3B1B62A9B2C31009147D3 /* AnimationHelper.swift in Sources */,
+				E6E3B1B62A9B2C31009147D3 /* Helper.swift in Sources */,
 				E6E3B1BC2A9B4C5C009147D3 /* UIView+Extension.swift in Sources */,
 				E6E3B1AB2A9B270A009147D3 /* NetworkService.swift in Sources */,
 				E6E3B1952A9B1A3E009147D3 /* TrackCell.swift in Sources */,
 				E6E3B1A22A9B1F92009147D3 /* UserDefaults+Extension.swift in Sources */,
 				E6E3B18C2A9B10BF009147D3 /* LibraryView.swift in Sources */,
+				E67886182A9B53CB00CF38B0 /* MusicNavigationState.swift in Sources */,
 				E6E3B17F2A9B0C67009147D3 /* SearchVC.swift in Sources */,
 				E6E3B1802A9B0C67009147D3 /* SearchInteractor.swift in Sources */,
 				E6E3B1912A9B1662009147D3 /* SearchViewModel.swift in Sources */,
