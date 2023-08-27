@@ -50,23 +50,26 @@ struct LibraryView: View {
 
         List {
           ForEach(savedTracks) { track in
-            LibraryViewCell(cell: track).gesture(
-              LongPressGesture()
-                .onEnded { _ in
-                  print("Pressed!")
-                  self.track = track
-                  self.showingAlert = true
-                }.simultaneously(with: TapGesture()
+            LibraryViewCell(cell: track)
+              .gesture(
+                LongPressGesture()
                   .onEnded { _ in
-                    let tabBarVC = getTabBarViewController()
-                    tabBarVC?.trackDetailView.trackMovingDelegate = self
-
+                    print("Pressed!")
                     self.track = track
-                    self.tabBarDelegate?.maximizeTrackDetailController(searchViewModel: self.track)
-                  }))
+                    self.showingAlert = true
+                  }
+                  .simultaneously(with: TapGesture()
+                    .onEnded { _ in
+                      let tabBarVC = Helper.getTabBarViewController()
+                      tabBarVC?.trackDetailView.trackMovingDelegate = self
+
+                      self.track = track
+                      self.tabBarDelegate?.maximizeTrackDetailController(searchViewModel: self.track)
+                    }))
           } // ForEach
           .onDelete(perform: delete)
         } // List
+        .listStyle(.inset)
       } // VStack
       .actionSheet(isPresented: $showingAlert) {
         ActionSheet(
@@ -117,20 +120,6 @@ private extension LibraryView {
       let defaults = UserDefaults.standard
       defaults.set(savedData, forKey: UserDefaults.favoriteTrackKey)
     }
-  }
-}
-
-private extension LibraryView {
-  /// Get MainTabBarController from UIApplication.
-  func getTabBarViewController() -> MainTabBarController? {
-    let keyWindow = UIApplication.shared.connectedScenes
-      .filter { $0.activationState == .foregroundActive }
-      .map { $0 as? UIWindowScene }
-      .compactMap { $0 }
-      .first?.windows
-      .filter { $0.isKeyWindow }.first
-    let tabBarViewController = keyWindow?.rootViewController as? MainTabBarController
-    return tabBarViewController
   }
 }
 

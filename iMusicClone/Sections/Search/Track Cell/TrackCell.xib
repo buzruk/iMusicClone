@@ -41,11 +41,12 @@
                         <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8u-bZ-68R">
-                        <rect key="frame" x="352" y="34" width="16" height="16"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8u-bZ-68R">
+                        <rect key="frame" x="352" y="31" width="16" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <color key="tintColor" red="0.99215686270000003" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="Add"/>
                         <connections>
                             <action selector="addTrackAction:" destination="rbv-rS-Joa" eventType="touchUpInside" id="l8o-Le-nZh"/>
                         </connections>
@@ -63,6 +64,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Add" width="16" height="16"/>
         <image name="dummy-image" width="88" height="88"/>
     </resources>
 </document>

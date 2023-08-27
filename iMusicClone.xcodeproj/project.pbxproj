@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E664F0BC2A9B64E60078E630 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664F0BB2A9B64E60078E630 /* Color+Extension.swift */; };
 		E67886182A9B53CB00CF38B0 /* MusicNavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67886172A9B53CB00CF38B0 /* MusicNavigationState.swift */; };
 		E678861A2A9B54CE00CF38B0 /* LibraryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67886192A9B54CE00CF38B0 /* LibraryViewCell.swift */; };
 		E6E3B15B2A9B0885009147D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B15A2A9B0885009147D3 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E664F0BB2A9B64E60078E630 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		E67886172A9B53CB00CF38B0 /* MusicNavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicNavigationState.swift; sourceTree = "<group>"; };
 		E67886192A9B54CE00CF38B0 /* LibraryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewCell.swift; sourceTree = "<group>"; };
 		E6E3B1572A9B0885009147D3 /* iMusicClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMusicClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +195,7 @@
 				E6E3B1AF2A9B27DF009147D3 /* UIColor+Extension.swift */,
 				E6E3B1B92A9B4BF8009147D3 /* CMTime+Extension.swift */,
 				E6E3B1BB2A9B4C5C009147D3 /* UIView+Extension.swift */,
+				E664F0BB2A9B64E60078E630 /* Color+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				E6E3B15D2A9B0885009147D3 /* SceneDelegate.swift in Sources */,
 				E6E3B17C2A9B0C67009147D3 /* SearchWorker.swift in Sources */,
 				E6E3B17E2A9B0C67009147D3 /* SearchModels.swift in Sources */,
+				E664F0BC2A9B64E60078E630 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
