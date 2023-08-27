@@ -30,6 +30,9 @@ class SearchVC: UIViewController, SearchDisplayLogic {
   /// A timer that fires after a certain time interval has elapsed,
   ///  sending a specified message to a target object.
   private var timer: Timer? = nil
+  
+  /// A footer of the table view
+  private lazy var footerView = FooterView()
 
   // MARK: Interface builder outlet
   
@@ -52,6 +55,10 @@ class SearchVC: UIViewController, SearchDisplayLogic {
         print("view controller: .displayTracks")
         self.searchViewModel = searchViewModel
         table.reloadData()
+        footerView.hideLoader()
+      case .displayFooterView:
+        print("view controller: .displayFooterView")
+        footerView.showLoader()
     }
   }
 }
@@ -86,6 +93,8 @@ private extension SearchVC {
     
     let nib = UINib(nibName: TrackCell.reuseId, bundle: nil)
     table.register(nib, forCellReuseIdentifier: TrackCell.reuseId)
+    
+    table.tableFooterView = footerView
   }
 }
 
@@ -136,5 +145,25 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     heightForRowAt indexPath: IndexPath
   ) -> CGFloat {
     84
+  }
+  
+  func tableView(
+    _ tableView: UITableView,
+    viewForHeaderInSection section: Int
+  ) -> UIView? {
+    let label = UILabel()
+    label.text = "Please enter search term above..."
+    label.textAlignment = .center
+    label.font = UIFont.systemFont(ofSize: 18)
+    return label
+  }
+  
+  func tableView(
+    _ tableView: UITableView,
+    heightForHeaderInSection section: Int
+  ) -> CGFloat {
+    searchViewModel.cells.count > 0
+      ? 0
+      : 250
   }
 }

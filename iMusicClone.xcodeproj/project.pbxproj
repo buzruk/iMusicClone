@@ -29,6 +29,9 @@
 		E6E3B1A22A9B1F92009147D3 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1A12A9B1F92009147D3 /* UserDefaults+Extension.swift */; };
 		E6E3B1A52A9B2484009147D3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E6E3B1A42A9B2484009147D3 /* Alamofire */; };
 		E6E3B1A82A9B2490009147D3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E6E3B1A72A9B2490009147D3 /* Kingfisher */; };
+		E6E3B1AB2A9B270A009147D3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1AA2A9B270A009147D3 /* NetworkService.swift */; };
+		E6E3B1AE2A9B276A009147D3 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1AD2A9B276A009147D3 /* FooterView.swift */; };
+		E6E3B1B02A9B27DF009147D3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1AF2A9B27DF009147D3 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		E6E3B1932A9B1A3E009147D3 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		E6E3B19F2A9B1D10009147D3 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		E6E3B1A12A9B1F92009147D3 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		E6E3B1AA2A9B270A009147D3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E6E3B1AD2A9B276A009147D3 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		E6E3B1AF2A9B27DF009147D3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 		E6E3B1592A9B0885009147D3 /* iMusicClone */ = {
 			isa = PBXGroup;
 			children = (
+				E6E3B1A92A9B26FF009147D3 /* Services */,
 				E6E3B18D2A9B11F4009147D3 /* Extensions */,
 				E6E3B1872A9B108E009147D3 /* Sections */,
 				E6E3B1842A9B0FED009147D3 /* Model */,
@@ -111,6 +118,7 @@
 		E6E3B1722A9B0C3B009147D3 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				E6E3B1AC2A9B274F009147D3 /* FooterView */,
 				E6E3B1922A9B1A0E009147D3 /* TrackCell */,
 				E6E3B1822A9B0C9A009147D3 /* SearchVC.storyboard */,
 				E6E3B1782A9B0C67009147D3 /* SearchVC.swift */,
@@ -164,6 +172,7 @@
 			children = (
 				E6E3B18E2A9B1205009147D3 /* UIViewController+Extension.swift */,
 				E6E3B1A12A9B1F92009147D3 /* UserDefaults+Extension.swift */,
+				E6E3B1AF2A9B27DF009147D3 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -175,6 +184,22 @@
 				E6E3B1932A9B1A3E009147D3 /* TrackCell.swift */,
 			);
 			path = TrackCell;
+			sourceTree = "<group>";
+		};
+		E6E3B1A92A9B26FF009147D3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E6E3B1AA2A9B270A009147D3 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E6E3B1AC2A9B274F009147D3 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				E6E3B1AD2A9B276A009147D3 /* FooterView.swift */,
+			);
+			path = FooterView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,10 +283,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6E3B15F2A9B0885009147D3 /* ViewController.swift in Sources */,
+				E6E3B1B02A9B27DF009147D3 /* UIColor+Extension.swift in Sources */,
 				E6E3B18F2A9B1205009147D3 /* UIViewController+Extension.swift in Sources */,
 				E6E3B1862A9B1001009147D3 /* Track.swift in Sources */,
+				E6E3B1AE2A9B276A009147D3 /* FooterView.swift in Sources */,
 				E6E3B15B2A9B0885009147D3 /* AppDelegate.swift in Sources */,
 				E6E3B17B2A9B0C67009147D3 /* SearchPresenter.swift in Sources */,
+				E6E3B1AB2A9B270A009147D3 /* NetworkService.swift in Sources */,
 				E6E3B1952A9B1A3E009147D3 /* TrackCell.swift in Sources */,
 				E6E3B1A22A9B1F92009147D3 /* UserDefaults+Extension.swift in Sources */,
 				E6E3B18C2A9B10BF009147D3 /* LibraryView.swift in Sources */,

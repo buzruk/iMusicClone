@@ -18,14 +18,15 @@ enum Search {
 
     enum Response {
       enum ResponseType {
-        case presentTracks(searchResponse: SearchResponse)
-//        case presentTracks(searchResponse: SearchResponse?)
+        case presentTracks(searchResponse: SearchResponse?)
+        case presentFooterView
       }
     }
 
     enum ViewModel {
       enum ViewModelData {
         case displayTracks(searchViewModel: SearchViewModel)
+        case displayFooterView
       }
     }
   }

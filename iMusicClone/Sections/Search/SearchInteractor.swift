@@ -19,6 +19,9 @@ protocol SearchBusinessLogic {
 class SearchInteractor: SearchBusinessLogic {
   var presenter: SearchPresentationLogic?
   var service: SearchService?
+  
+  /// The service that fetch track from iTunes Search API.
+  private var networkService = NetworkService()
 
   /// Make request from recevied `request`.
   ///
@@ -27,10 +30,16 @@ class SearchInteractor: SearchBusinessLogic {
     if service == nil {
       service = SearchService()
     }
-    
+
     switch request {
       case .getTracks(let searchTerm):
         print("interactor .getTracks")
+        presenter?.presentData(response: .presentFooterView)
+        networkService.fetchTracks(
+          from: searchTerm
+        ) { [weak self] searchResponese in
+          self?.presenter?.presentData(response: .presentTracks(searchResponse: searchResponese))
+        }
     }
   }
 }

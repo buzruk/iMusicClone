@@ -5,7 +5,7 @@
 //  Created by Buzurgmexr Sultonaliyev on 27/08/23.
 //
 
-struct Track {
+struct Track: Decodable {
   let trackName: String
   let collectionName: String?
   let artistName: String
@@ -13,7 +13,7 @@ struct Track {
   let previewUrl: String?
 }
 
-struct SearchResponse {
+struct SearchResponse: Decodable {
   var resultCount: Int
   var results: [Track]
 }
