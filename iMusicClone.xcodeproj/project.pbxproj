@@ -23,6 +23,7 @@
 		E6E3B1862A9B1001009147D3 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1852A9B1001009147D3 /* Track.swift */; };
 		E6E3B18C2A9B10BF009147D3 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B18B2A9B10BF009147D3 /* LibraryView.swift */; };
 		E6E3B18F2A9B1205009147D3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B18E2A9B1205009147D3 /* UIViewController+Extension.swift */; };
+		E6E3B1912A9B1662009147D3 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3B1902A9B1662009147D3 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E6E3B1852A9B1001009147D3 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		E6E3B18B2A9B10BF009147D3 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		E6E3B18E2A9B1205009147D3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		E6E3B1902A9B1662009147D3 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				E6E3B1792A9B0C67009147D3 /* SearchInteractor.swift */,
 				E6E3B1742A9B0C67009147D3 /* SearchPresenter.swift */,
 				E6E3B1772A9B0C67009147D3 /* SearchModels.swift */,
+				E6E3B1902A9B1662009147D3 /* SearchViewModel.swift */,
 				E6E3B1752A9B0C67009147D3 /* SearchWorker.swift */,
 				E6E3B1762A9B0C67009147D3 /* SearchRouter.swift */,
 			);
@@ -232,6 +235,7 @@
 				E6E3B18C2A9B10BF009147D3 /* LibraryView.swift in Sources */,
 				E6E3B17F2A9B0C67009147D3 /* SearchVC.swift in Sources */,
 				E6E3B1802A9B0C67009147D3 /* SearchInteractor.swift in Sources */,
+				E6E3B1912A9B1662009147D3 /* SearchViewModel.swift in Sources */,
 				E6E3B17D2A9B0C67009147D3 /* SearchRouter.swift in Sources */,
 				E6E3B1712A9B0927009147D3 /* MainTabBarController.swift in Sources */,
 				E6E3B15D2A9B0885009147D3 /* SceneDelegate.swift in Sources */,

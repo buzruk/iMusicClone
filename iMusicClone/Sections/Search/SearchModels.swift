@@ -12,19 +12,20 @@ enum Search {
   enum Model {
     enum Request {
       enum RequestType {
-        case some
+        case getTracks(searchTerm: String)
       }
     }
 
     enum Response {
       enum ResponseType {
-        case some
+        case presentTracks(searchResponse: SearchResponse)
+//        case presentTracks(searchResponse: SearchResponse?)
       }
     }
 
     enum ViewModel {
       enum ViewModelData {
-        case some
+        case displayTracks(searchViewModel: SearchViewModel)
       }
     }
   }

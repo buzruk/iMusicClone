@@ -27,5 +27,10 @@ class SearchInteractor: SearchBusinessLogic {
     if service == nil {
       service = SearchService()
     }
+    
+    switch request {
+      case .getTracks(let searchTerm):
+        print("interactor .getTracks")
+    }
   }
 }

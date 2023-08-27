@@ -22,5 +22,10 @@ class SearchPresenter: SearchPresentationLogic {
   /// Presenting received `response` from ``SearchInteractor``.
   ///
   /// - Parameter response: The response type of the search model.
-  func presentData(response: Search.Model.Response.ResponseType) {}
+  func presentData(response: Search.Model.Response.ResponseType) {
+    switch response {
+      case .presentTracks(let searchResponse):
+        print("presenter .presentTracks")
+    }
+  }
 }

@@ -19,6 +19,9 @@ protocol SearchDisplayLogic: AnyObject {
 class SearchVC: UIViewController, SearchDisplayLogic {
   var interactor: SearchBusinessLogic?
   var router: (NSObjectProtocol & SearchRoutingLogic)?
+  
+  /// view model for search section of the app.
+  private var searchViewModel = SearchViewModel(cells: [])
 
   // MARK: Interface builder outlet
   
@@ -34,7 +37,13 @@ class SearchVC: UIViewController, SearchDisplayLogic {
     setup()
   }
   
-  func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {}
+  func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
+    switch viewModel {
+      case .displayTracks(let searchViewModel):
+        print("view controller: .displayTracks")
+        self.searchViewModel = searchViewModel
+    }
+  }
 }
 
 // MARK: - Setup
