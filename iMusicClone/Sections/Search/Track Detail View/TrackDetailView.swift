@@ -215,9 +215,9 @@ private extension TrackDetailView {
       self?.currentTimeLabel.text = time.toString()
       
       let duration = self?.player.currentItem?.duration
-      let currentDuration = duration ?? CMTimeMake(value: 1, timescale: 1) - time
+      let currentDuration = ((duration ?? CMTimeMake(value: 1, timescale: 1)) - time).toString()
       
-      self?.durationLabel.text = "-\(currentDuration.toString())"
+      self?.durationLabel.text = "-\(currentDuration)"
       self?.updateCurrentTimeSlider()
     }
   }
