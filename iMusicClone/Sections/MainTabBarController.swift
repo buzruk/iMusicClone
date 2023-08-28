@@ -26,7 +26,7 @@ class MainTabBarController: UITabBarController {
 
   private let searchVC: SearchVC = .loadFromStoryboard()
   let trackDetailView: TrackDetailView = .loadFromNib()
-  private let libraryView = LibraryView()
+  private var libraryView = LibraryView()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -37,7 +37,7 @@ class MainTabBarController: UITabBarController {
 
     searchVC.tabBarDelegate = self
 
-//    libraryView.tabBarDelegate = self
+    libraryView.tabBarDelegate = self
     let hostVC = UIHostingController(rootView: libraryView)
 
     viewControllers = [
@@ -120,7 +120,7 @@ extension MainTabBarController: MainTabBarControllerDelegate {
           self.tabBar.transform = .identity
           self.trackDetailView.minimizedTrackView.alpha = 1
           self.trackDetailView.maximizedTrackView.alpha = 0
-//          self.tabBar.alpha = 0
+          self.tabBar.alpha = 1
         }
       case .maximized:
         minimizedTopAnchorConstraint.isActive = false
@@ -131,7 +131,7 @@ extension MainTabBarController: MainTabBarControllerDelegate {
         Helper.animate(options: .curveEaseOut) {
           self.view.layoutIfNeeded()
           self.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
-//          self.tabBar.alpha = 1
+          self.tabBar.alpha = 0
           self.trackDetailView.minimizedTrackView.alpha = 0
           self.trackDetailView.maximizedTrackView.alpha = 1
         }

@@ -129,8 +129,8 @@ class TrackDetailView: UIView {
   
   @IBAction func musicStateAction(_ sender: UIButton) {
     player.timeControlStatus == .paused
-      ? setupMusicState(for: .paused)
-      : setupMusicState(for: .playing)
+      ? setupMusicState(for: .playing)
+      : setupMusicState(for: .paused)
   }
 }
 

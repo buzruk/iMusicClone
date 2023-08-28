@@ -39,7 +39,7 @@ enum Helper {
   static func animate(
     withDuration: Double = 1,
     delay: Double = 0,
-    usingSpringWithDamping: Double = 0.7,
+    usingSpringWithDamping: Double = 0.8,
     initialSpringVelocity: Double = 1,
     options: UIView.AnimationOptions = .curveEaseInOut,
     animations: @escaping () -> Void)
