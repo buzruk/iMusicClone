@@ -6,7 +6,6 @@
 
 - [Screenshots](#screenshots)
 - [Pattern](#pattern)
-- [Community](#community)
 - [Technologies](#technologies)
 - [Packages](#packages)
 - [Contributing](#contributing)
